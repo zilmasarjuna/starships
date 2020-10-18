@@ -16,10 +16,10 @@ import config from '../config'
 const isDevelopment = config.node_env === 'development'
 
 export const mainPersistConfig = {
-  key: 'movie_app',
+  key: 'starship_app',
   storage: localForage,
   debug: isDevelopment,
-  blacklist: ['listMovie']
+  blacklist: ['listStarship']
 }
 
 const middleware = [thunk]
@@ -29,7 +29,7 @@ if (isDevelopment) {
 }
 
 const reducers = combineReducers({
-  movie_store: persistReducer(mainPersistConfig, rootReducer),
+  starship_store: persistReducer(mainPersistConfig, rootReducer),
 })
 
 const enhancers = [applyMiddleware(...middleware)]

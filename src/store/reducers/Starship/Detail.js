@@ -1,7 +1,7 @@
 import {
-  DETAIL_MOVIE_REQUEST,
-  DETAIL_MOVIE_SUCCESS,
-  DETAIL_MOVIE_FAILURE,
+  DETAIL_STARSHIP_REQUEST,
+  DETAIL_STARSHIP_SUCCESS,
+  DETAIL_STARSHIP_FAILURE,
 } from 'store/types'
 
 const initialState = {
@@ -12,21 +12,21 @@ const initialState = {
 
 export default function detail(state = initialState, action) {
   switch(action.type) {
-    case DETAIL_MOVIE_REQUEST:
+    case DETAIL_STARSHIP_REQUEST:
       return {
         ...state,
         isFetching: true,
         error: null,
         data: {},
       }
-    case DETAIL_MOVIE_SUCCESS:
+    case DETAIL_STARSHIP_SUCCESS:
       return {
         ...state,
         isFetching: false,
         data: action.data,
         error: null,
       }
-    case DETAIL_MOVIE_FAILURE: 
+    case DETAIL_STARSHIP_FAILURE: 
       return {
         ...state,
         isFetching: false,

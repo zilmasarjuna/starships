@@ -2,28 +2,26 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Col, Row } from 'antd'
 
-import { fetchListMovie } from 'store/actions/Movie/List'
+import { fetchListStarship } from 'store/actions/Starship/List'
 
-import { SearchList, ListMovie } from 'components'
+import { SearchList, ListStarship } from 'components'
 
-const List = ({ fetchListMovie }) => {
+const List = ({ fetchListStarship }) => {
   useEffect(() => {
-    fetchListMovie()
+    fetchListStarship()
   })
 
   return (
     <div className="container">
+      <SearchList />
       <div className="container-list">
         <div className="title-page">
-          <h2>List Movies</h2>
+          <h2>List Starships</h2>
         </div>
         <div className="body-page">
           <Row>
-            <Col md={7}>
-              <SearchList />
-            </Col>
-            <Col md={24}>
-              <ListMovie />
+            <Col md={24} xs={24}>
+              <ListStarship />
             </Col>
           </Row>
         </div>
@@ -36,5 +34,5 @@ const List = ({ fetchListMovie }) => {
 
 export default connect(
   null,
-  { fetchListMovie }
+  { fetchListStarship }
 )(List)

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
-import listMovie from './Movie/List'
-import detailMovie from './Movie/Detail'
+import listStarship from './Starship/List'
+import detailStarship from './Starship/Detail'
 
 export default combineReducers({
-  listMovie,
-  detailMovie
+  listStarship,
+  detailStarship
 })
